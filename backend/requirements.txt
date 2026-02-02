@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic
+PyYAML
+pypdf
+numpy
+sentence-transformers
+spacy
+# FAISS: install via conda-forge (recommended)
+# conda install -c conda-forge faiss-cpu

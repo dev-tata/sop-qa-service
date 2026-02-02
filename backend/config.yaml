@@ -1,0 +1,9 @@
+# Optional. You can ignore this file.
+pdf_path: "data/pdfs/document.pdf"
+# TODO: Switch to OpenAI embedding model name when provider changes.
+model_name: "all-MiniLM-L6-v2"
+embedding_batch_size: 32
+top_k_search: 5
+pool_k_search: 25
+progress_interval: 10
+index_dir: "data/index"
