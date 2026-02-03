@@ -1,4 +1,6 @@
-# PDF FAISS API Service (QA - Quastion/Answer)
+# SOP QA Service
+SOP = Standard Operating Procedure  
+QA = Question/Answer
 
 ## 1) Create conda env
 ```bash
@@ -32,7 +34,7 @@ uvicorn app.main:app --reload
 Open docs:
 - http://127.0.0.1:8000/docs
 
-## 4) Run tests
+## 4) Run backend tests
 ```bash
 cd backend
 pip install -r requirements-dev.txt
@@ -55,12 +57,29 @@ python -m pytest tests/test_chunking.py::test_chunk_pages_with_headings
 - `GET  /chunks/{id}`    retrieve full chunk content by chunk_id
 - `GET  /health`         service status and readiness
 
+## 5) Run frontend (Vite + React/TS)
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend dev server:
+- http://127.0.0.1:5173
+
+The frontend proxies `/api/*` to the backend at `http://127.0.0.1:8000`.
+
+## 6) Run frontend tests
+```bash
+cd frontend
+npm test
+```
+
 ## Project layout
 ```
 backend/         FastAPI service, tests, and data
-frontend_empty/  placeholder for future frontend
+frontend/        React + TypeScript frontend (Vite) with Vitest tests
 ```
 
 ## TODO
 - Switch embeddings backend to OpenAI (update `model_name` in `backend/config.yaml` and replace `SentenceTransformer` in `backend/app/embeddings.py` and `backend/app/pipeline.py`).
-- Add frontend app inside `frontend_empty/` (rename folder once framework is chosen).

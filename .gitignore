@@ -54,6 +54,15 @@ backend/data/pdfs/
 backend/data/index/
 
 # =====================
+# Frontend (Vite/Node)
+# =====================
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+frontend/.cache/
+
+# =====================
 # Model caches
 # =====================
 .cache/
