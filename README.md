@@ -69,6 +69,14 @@ Frontend dev server:
 
 The frontend proxies `/api/*` to the backend at `http://127.0.0.1:8000`.
 
+## GitHub Pages (frontend)
+This repo includes a GitHub Actions workflow that builds the frontend and deploys `frontend/dist` to GitHub Pages.
+
+1) Push to `main` (or run the workflow manually).
+2) In GitHub: Settings → Pages → Source: `GitHub Actions`.
+
+Note: The dev proxy only works locally. For Pages, set the frontend to use a real backend URL (or disable API calls) so requests don’t go to `127.0.0.1`.
+
 ## 6) Run frontend tests
 ```bash
 cd frontend
