@@ -77,6 +77,13 @@ This repo includes a GitHub Actions workflow that builds the frontend and deploy
 
 Note: The dev proxy only works locally. For Pages, set the frontend to use a real backend URL (or disable API calls) so requests don’t go to `127.0.0.1`.
 
+### Production API base URL
+For GitHub Pages, set the API base to your deployed backend:
+
+1) In GitHub: Settings → Secrets and variables → Actions → Variables
+2) Add `VITE_API_BASE` (example value: `https://your-backend.example.com`)
+3) Re-run the Pages workflow
+
 ## 6) Run frontend tests
 ```bash
 cd frontend
